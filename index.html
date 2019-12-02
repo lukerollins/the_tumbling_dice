@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The Tumbling Dice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!--[if lt IE 9]><script src="js/html5shiv-printshiv.js" media="all"></script><![endif]-->
+    <link rel="stylesheet" href="input_styles.scss">
+</head>
+<body>
+    
+    <!-- This is the part that was inspired by my desire to maybe attempt some writing and a random number generator that my buddy used in lieu of dice in my brief roleplaying career when I wore a teenagers clothes. Because of this I have some of the The World Of Darkness' Storyteller/Table-top books, so I figured I'd use some thing along the lines of their system to decide what should happen to my characters. That's I created a select input with 9 values 2-10. See, in the aforementioned system you'll roll a number of dice calculated by a system that's waay to lengthy to go into right now, and difficulty number based on how hard the task at hand would be for your character. Anything below that number is a 'failure' The reason there is no option 1: 1 means 'botch' which is a 'dramatic failure' (read, really bad). They also cancel out your successes, which I figured would be easier to count using an ordered list.   -->
+    <div class="tumbling-dice">
+        <h1>The Tumbling Dice</h1>
+        <select name="difficulty" id="difficulty">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>         
+            <option value="9">9</option>     
+            <option value="10">10</option>
+        
+        </select>
+
+        <button id="classy">Roll</button>
+        <ol id="listy">
+            <!--<li ></li>-->
+        </ol>
+
+        <!-- I decided I'd save just this one part of the setup I started with. Essentially, it would be a button that, up being clicked would show the results of the roll in an ordered list. I figured an ordered list would make it easier to keep track of the results of my rolls.
+
+        <button id="d100">Roll D100</button>
+        <ol id="d100list">
+            <li ></li>
+        </ol>-->
+
+    <select name="dix" id="dix">   
+        <option value="4">D 4</option>    
+        <option value="6">D 6</option>
+        <option value="8">D 8</option>
+        <option value="10">D 10</option>
+        <option value="12">D 12</option>
+        <option value="20">D 20</option>
+        <option value="100">D 100</option>
+    </select> 
+    <button id="roll_me">Roll Me</button> 
+    <ol id="listed">
+        <!--<li ></li>-->
+    </ol>  
+</div>
+    <script src="dicey.js" type="text/javascript"></script>
+</body>
+</html>

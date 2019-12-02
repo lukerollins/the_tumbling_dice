@@ -1,0 +1,52 @@
+body {
+    font-size:  16px;
+}
+
+h1 {
+    font-size: 3.2rem;
+}
+
+/* Trying to put some space between the numbered markers of ordered list and the ordered list items themselves. Figured it would make things easier to read  */
+
+li {
+    margin: 0.5rem;
+    font-size: 1.25rem;
+}
+
+li::before {
+    content: "";
+    width: 1.33rem;
+    display: inline-block;
+}
+
+
+
+.tumbling-dice {
+    text-align: center;
+}
+
+/*#difficulty {
+    height: 2rem;
+    background: whitesmoke;
+}*/
+
+select {
+    height: 2.75rem;
+    background: transparent;
+    margin: auto;
+    background: chartreuse;
+    &::after {
+        padding: 1rem;
+    }
+}
+
+
+
+/*option {
+    text-align: center;
+    background: chartreuse;
+    }
+*/
+
+
+
