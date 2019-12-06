@@ -1,5 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+*::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
+  font-family: KentuckyFriedChickenFont;
   font-size: 16px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  /* Great place to firgure out gradiets: https://cssgradient.io/ */
+  background: rgba(154, 8, 81, 0.85);
+  background: linear-gradient(225deg, rgba(154, 8, 82, 0.85) 27%, rgba(187, 95, 10, 0.85) 67%);
 }
 
 h1 {
@@ -9,37 +27,147 @@ h1 {
 /* Trying to put some space between the numbered markers of ordered list and the ordered list items themselves. Figured it would make things easier to read  */
 li {
   margin: 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
 }
 
 li::before {
   content: "";
-  width: 1.33rem;
+  width: 1.5rem;
   display: inline-block;
 }
 
-.tumbling-dice {
-  text-align: center;
+ol.listy2 {
+  margin: 2.5rem;
 }
 
-/*#difficulty {
-    height: 2rem;
-    background: whitesmoke;
-}*/
 select {
   height: 2.75rem;
-  background: transparent;
-  margin: auto;
-  background: chartreuse;
-}
-select::after {
-  padding: 1rem;
+  min-width: 4.75rem;
+  margin: 0 1rem 0 0;
+  padding: 0 0 0 0.5rem;
+  background: #3db953;
+  border: none;
+  font-size: 1.5rem;
+  vertical-align: middle;
+  /* Apparently, the "appearance" property makes the arrow doodad disapear. */
+  font-family: inherit;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
 }
 
-/*option {
-    text-align: center;
-    background: chartreuse;
-    }
-*/
+select#difficulty {
+  padding: 0 0 0 1rem;
+}
+
+select:hover, select:focus {
+  outline: solid 0.2rem #ff9c3f;
+}
+
+select::before {
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+select::after {
+  content: "&#9660;";
+  height: 1em;
+  font-size: 1.5rem;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -0.5em;
+}
+
+option {
+  margin: 0;
+  background: #3db953;
+}
+
+button {
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-family: inherit;
+  border: 0;
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  background: transparent;
+  margin: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+button.rolly {
+  background: #bb150a;
+  border-radius: 100%;
+  border: solid 2px #bb150a;
+  padding: 2.5rem;
+  box-shadow: 0 1rem 0 0 #6e6f70;
+  /* The animation stylings I thought I was going to use...I dunno why I don't wanna erase them...
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+  transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);*/
+}
+
+button.rolly:hover, button.rolly:focus {
+  /*box-shadow: 0 0 0 2px rgb(136, 136, 136), 0 0.9rem 0 0 rgb(110, 111, 112);*/
+  background: #dc382e;
+  box-shadow: 0 1rem 0 0 #3c3c3d;
+}
+
+/*
+Even more of the original stylings...
+button.rolly::before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    box-shadow: 0 1rem 0 0 rgb(110, 111, 112);
+    border-radius: inherit;
+    padding: 2rem;
+    /*margin: 2rem;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+          transform: translate3d(0, 0.75em, -1em);
+  transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+/*button.rolly:hover, button.rolly:focus {
+
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+
+  }*/
+button.rolly:active {
+  background: #c71d11;
+  box-shadow: 0 0.2rem 0 0 #6e6f70;
+  -webkit-transform: translate(0em, 0.75em);
+  transform: translate(0em, 0.75em);
+}
+
+/*
+I know I should delete this stuff to make my code DRY-er, but for some odd reason I'm not gonna delete it...
+button.rolly:active::before {
+  box-shadow: 0 0 0 2px rgb(136, 136, 136), 0 -1rem 0 0 rgb(110, 111, 112);
+  -webkit-transform: translate3d(0, 2rem, -1em);
+          transform: translate3d(0, 2rem, -1em);
+}*/
 
 /*# sourceMappingURL=output_styles.css.map */
