@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/*! I've heard that Sass is rather helpful, especially when it comes to colors in one's styles, because you can modularize your CSS with partials. */
+/*! Great place to firgure out gradiets: https://cssgradient.io/ */
 * {
   box-sizing: border-box;
 }
@@ -8,15 +10,14 @@
 }
 
 body {
-  font-family: KentuckyFriedChickenFont;
+  font-family: KentuckyFriedChickenFont, cursive;
   font-size: 16px;
+  margin: 0;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
   min-height: 100vh;
-  /* Great place to firgure out gradiets: https://cssgradient.io/ */
   background: rgba(154, 8, 81, 0.85);
   background: linear-gradient(225deg, rgba(154, 8, 82, 0.85) 27%, rgba(187, 95, 10, 0.85) 67%);
 }
@@ -25,7 +26,7 @@ h1 {
   font-size: 3.2rem;
 }
 
-/* Trying to put some space between the numbered markers of ordered list and the ordered list items themselves. Figured it would make things easier to read  */
+/*! Trying to put some space between the numbered markers of ordered list and the ordered list items themselves. Figured it would make things easier to read  */
 li {
   margin: 0.5rem;
   font-size: 1.75rem;
@@ -51,10 +52,10 @@ select {
   font-size: 1.5rem;
   vertical-align: middle;
   /* Apparently, the "appearance" property makes the arrow doodad disapear. */
-  font-family: inherit;
   /*-moz-appearance: none;
   -webkit-appearance: none;
      appearance: none;*/
+  font-family: inherit;
   outline: none;
 }
 
@@ -137,6 +138,7 @@ button.rolly:active {
   box-shadow: 0 0.2rem 0 0 #272727;
   -webkit-transform: translate(0em, 0.75em);
   transform: translate(0em, 0.75em);
+  /*transform: translate(0em, 0.75em);*/
 }
 
 /*# sourceMappingURL=output_styles.css.map */

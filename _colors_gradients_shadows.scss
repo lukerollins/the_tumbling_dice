@@ -1,0 +1,13 @@
+/*! I've heard that Sass is rather helpful, especially when it comes to colors in one's styles, because you can modularize your CSS with partials. */
+$tumbling_background: rgba(154, 8, 81, 0.85);
+$selective_background_color: rgb(61, 185, 83);
+/*! Great place to firgure out gradiets: https://cssgradient.io/ */
+$button_hover_focus_gradient: radial-gradient(circle, rgba(187,21,10,1) 49%, rgb(83, 83, 83) 90%);
+$tumbling_background_gradient: linear-gradient(225deg, rgba(154,8,82,0.85) 27%, rgba(187, 95, 10,0.85) 67%);
+$you_gotta_roll_me: rgb(187, 21, 10);
+$keep_on_rolling: rgb(199, 29, 17);
+$button_hover_focus_font_color: rgb(49, 49, 49);
+$selective_outline_color: rgb(255, 156, 63);
+$button_shadow: 0 1rem 0 0 rgb(110, 111, 112);
+$button_shadow_hover_focus: 0 1rem 0 0 rgb(49, 49, 49);
+$button_shadow_active: 0 0.2rem 0 0 rgb(39, 39, 39);

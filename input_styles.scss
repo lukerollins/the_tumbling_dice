@@ -1,3 +1,9 @@
+@use 'colors_gradients_shadows';
+@mixin active_button_transform($property) {
+    -webkit-transform: $property;
+            transform: $property;
+}
+
 * {
     box-sizing: border-box;
   }
@@ -6,24 +12,23 @@
   }
 
 body {
-    font-family: KentuckyFriedChickenFont;
+    font-family: KentuckyFriedChickenFont, cursive;
     font-size:  16px;
+    margin: 0;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
     min-height: 100vh;
-    /* Great place to firgure out gradiets: https://cssgradient.io/ */
-    background: rgba(154, 8, 81, 0.85);
-background: linear-gradient(225deg, rgba(154,8,82,0.85) 27%, rgba(187, 95, 10,0.85) 67%);  
+    background: colors_gradients_shadows.$tumbling_background;
+    background: colors_gradients_shadows.$tumbling_background_gradient;  
 }
 
 h1 {
     font-size: 3.2rem;
 }
 
-/* Trying to put some space between the numbered markers of ordered list and the ordered list items themselves. Figured it would make things easier to read  */
+/*! Trying to put some space between the numbered markers of ordered list and the ordered list items themselves. Figured it would make things easier to read  */
 
 li {
     margin: 0.5rem;
@@ -45,15 +50,15 @@ select {
     min-width: 4.75rem;
     margin: 0 1rem 0 0;
     padding: 0 0 0 0.5rem;
-    background: rgb(61, 185, 83);
+    background: colors_gradients_shadows.$selective_background_color;
     border: /*solid 0.15rem rgb(154, 8, 82)*/ none;
     font-size: 1.5rem;
     vertical-align: middle;
     /* Apparently, the "appearance" property makes the arrow doodad disapear. */
-    font-family: inherit;
     /*-moz-appearance: none;
 	-webkit-appearance: none;
     appearance: none;*/
+    font-family: inherit;
     outline: none;
 }
 
@@ -62,7 +67,7 @@ select#difficulty {
 }
 
 select:hover, select:focus {
-    outline: solid 0.2rem rgb(255, 156, 63);
+    outline: solid 0.2rem colors_gradients_shadows.$selective_outline_color;
 }
 
 select#dix {
@@ -92,7 +97,7 @@ select::after {
 
 option {
     margin: 0;
-    background: rgb(61, 185, 83);
+    background: colors_gradients_shadows.$selective_background_color;
     }
 
 
@@ -112,11 +117,11 @@ button {
 }
 
 button.rolly {
-    background: rgb(187, 21, 10);
+    background: colors_gradients_shadows.$you_gotta_roll_me;
     border-radius: 100%;
     border: none /*solid 2px rgb(187, 21, 10);*/;
     padding: 2.5rem;
-    box-shadow: 0 1rem 0 0 rgb(110, 111, 112);
+    box-shadow: colors_gradients_shadows.$button_shadow;
 }
 
   
@@ -127,18 +132,18 @@ button.rolly:hover, button.rolly:focus {
         Possible gradient #1
     background: rgb(187,21,10);
     background: radial-gradient(circle, rgba(187,21,10,1) 33%, rgba(173,173,172,1) 89%);*/
-    background: rgb(187,21,10);
-    background: radial-gradient(circle, rgba(187,21,10,1) 49%, rgb(83, 83, 83) 90%); 
-    box-shadow: 0 1rem 0 0 rgb(49, 49, 49);
+    background: colors_gradients_shadows.$you_gotta_roll_me;
+    background: colors_gradients_shadows.$button_hover_focus_gradient; 
+    box-shadow: colors_gradients_shadows.$button_shadow_hover_focus;
     /*border: none;*/
-    color: rgb(49, 49, 49);
+    color: colors_gradients_shadows.$button_hover_focus_font_color;
   }
 
 button.rolly:active {
-    background: rgb(199, 29, 17);
-    box-shadow: 0 0.2rem 0 0 rgb(39, 39, 39);
-    -webkit-transform: translate(0em, 0.75em);
-            transform: translate(0em, 0.75em);
+    background: colors_gradients_shadows.$keep_on_rolling;
+    box-shadow: colors_gradients_shadows.$button_shadow_active;
+    @include active_button_transform(translate(0em, 0.75em));
+            /*transform: translate(0em, 0.75em);*/
   }
 
 
