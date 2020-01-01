@@ -1,6 +1,5 @@
-@charset "UTF-8";
 /*! I've heard that Sass is rather helpful, especially when it comes to colors in one's styles, because you can modularize your CSS with partials. */
-/*! Great place to firgure out gradiets: https://cssgradient.io/ */
+/*! Great place to figure out gradiets: https://cssgradient.io/ */
 * {
   box-sizing: border-box;
 }
@@ -10,7 +9,7 @@
 }
 
 body {
-  font-family: KentuckyFriedChickenFont, cursive;
+  font-family: "Baloo", cursive;
   font-size: 16px;
   margin: 0;
   text-align: center;
@@ -44,17 +43,13 @@ ol.listy2 {
 
 select {
   height: 2.75rem;
-  min-width: 4.75rem;
-  margin: 0 1rem 0 0;
+  min-width: 4.95rem;
+  margin: 0 0.313rem;
   padding: 0 0 0 0.5rem;
   background: #3db953;
   border: none;
   font-size: 1.5rem;
   vertical-align: middle;
-  /* Apparently, the "appearance" property makes the arrow doodad disapear. */
-  /*-moz-appearance: none;
-  -webkit-appearance: none;
-     appearance: none;*/
   font-family: inherit;
   outline: none;
 }
@@ -67,29 +62,8 @@ select:hover, select:focus {
   outline: solid 0.2rem #ff9c3f;
 }
 
-select#dix {
-  padding: 0 0.313rem 0 0.313rem;
-}
-
-/*select::before {
-  width: 2em;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  border-radius: 0 3px 3px 0;
-}
-
-select::after {
-  font-family: "Helvetica";
-  content: "▼";
-  height: 1em;
-  font-size: 1.5rem;
-  line-height: 1;
-  right: 1.2em;
-  top: 50%;
-  margin-top: -.5em;
-  position: absolute;
-  display: inline-block;
+/*select#dix {
+    margin: 0 0.313rem;
 }*/
 option {
   margin: 0;
@@ -120,16 +94,9 @@ button.rolly {
 }
 
 button.rolly:hover, button.rolly:focus {
-  /*box-shadow: 0 0 0 2px rgb(136, 136, 136), 0 0.9rem 0 0 rgb(110, 111, 112);*/
-  /*background: rgb(220, 56, 46);*/
-  /*
-      Possible gradient #1
-  background: rgb(187,21,10);
-  background: radial-gradient(circle, rgba(187,21,10,1) 33%, rgba(173,173,172,1) 89%);*/
   background: #bb150a;
   background: radial-gradient(circle, #bb150a 49%, #535353 90%);
   box-shadow: 0 1rem 0 0 #313131;
-  /*border: none;*/
   color: #313131;
 }
 
@@ -138,7 +105,6 @@ button.rolly:active {
   box-shadow: 0 0.2rem 0 0 #272727;
   -webkit-transform: translate(0em, 0.75em);
   transform: translate(0em, 0.75em);
-  /*transform: translate(0em, 0.75em);*/
 }
 
 /*# sourceMappingURL=output_styles.css.map */
