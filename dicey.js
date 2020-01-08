@@ -1,16 +1,22 @@
+
 const stayClassy = document.getElementById('classy');
-const tenor = document.getElementById('roll_me')
+const tenor = document.getElementById('roll_me');
+const resulting_modal = document.getElementById('resulting-modal');
  /* const dee4 = document.getElementById('d4');
  dee100.addEventListener('click', dice100); */
  stayClassy.addEventListener('click', getDifficulty);
- tenor.addEventListener('click', theTumblingDice); 
+ tenor.addEventListener('click', theTumblingDice);
+//resulting_modal.addEventListener('click', toggleModal);
 
+ const number_modal = document.getElementById('number-modal');
+ var result
 /* Here's the corresponding JavaScript for the "Storytelling" dice roller */
 function getDifficulty() {
     let e = document.getElementById("difficulty");
     let diffOf = e.options[e.selectedIndex].value;
     let roll = Math.floor(Math.random() * 10) + 1;
-  	let result;
+    
+  	//let result;
     if(roll >= diffOf) {
         result = "Sucess!"
     } else if (roll === 1) {
@@ -22,8 +28,24 @@ function getDifficulty() {
   console.log(result); 
    let listed = document.createElement("li");
    listed.textContent = result;
-    document.getElementById("listy").appendChild(listed); 
+    document.getElementById("listy").appendChild(listed);
+    toggleModal();
+    setTimeout(toggleModal, 300);
+
 }
+
+function toggleModal() {
+    let stat = resulting_modal.style.display;
+
+    if (stat === "none") {
+        resulting_modal.style.display = "block";
+    } else {
+        resulting_modal.style.display = "none";
+    }
+}
+
+
+ 
 
 /* Here's the DRY-er version of the dice roller to get a number */
 function theTumblingDice() {
@@ -55,6 +77,8 @@ function dice100() {
     let rollingD = tD.options[tD.selectedIndex].value;
     let roll = Math.floor(Math.random() * 10) + 1;
 }*/
+getDifficulty.toggleModal;
+
 
 
 
