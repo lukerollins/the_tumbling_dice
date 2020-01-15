@@ -1,61 +1,65 @@
 
 const stayClassy = document.getElementById('classy');
-const tenor = document.getElementById('roll_me');
-const resulting_modal = document.getElementById('resulting-modal');
+const tenor = document.getElementById('rolling');
  /* const dee4 = document.getElementById('d4');
  dee100.addEventListener('click', dice100); */
  stayClassy.addEventListener('click', getDifficulty);
  tenor.addEventListener('click', theTumblingDice);
-//resulting_modal.addEventListener('click', toggleModal);
-
- const number_modal = document.getElementById('number-modal');
+ var resultingModal 
  var result
+ var classyModal = document.getElementById('botch');
+    var numModal = document.getElementById('num');
+    var roll_me
+    var keep_on_rolling
+
 /* Here's the corresponding JavaScript for the "Storytelling" dice roller */
 function getDifficulty() {
-    let e = document.getElementById("difficulty");
-    let diffOf = e.options[e.selectedIndex].value;
+    let eh = document.getElementById("difficulty");
+    let diffOf = eh.options[eh.selectedIndex].value;
     let roll = Math.floor(Math.random() * 10) + 1;
     
   	//let result;
     if(roll >= diffOf) {
-        result = "Sucess!"
+        result = "Success!"
     } else if (roll === 1) {
-        result = "Botch!"
+        result = "Botch!" 
     } else {
-        result = "Failure!"
+        result = "Failure!" 
     };
     
   console.log(result); 
    let listed = document.createElement("li");
    listed.textContent = result;
     document.getElementById("listy").appendChild(listed);
-    toggleModal();
-    setTimeout(toggleModal, 300);
-
-}
-
-function toggleModal() {
-    let stat = resulting_modal.style.display;
-
-    if (stat === "none") {
-        resulting_modal.style.display = "block";
+  
+    if(result === "Success!") {
+        rslts = 'Success!'
+    } else if (result === "Botch!") {
+        rslts = 'Botch!'
     } else {
-        resulting_modal.style.display = "none";
-    }
+        rslts = 'failure!'
+    };
+    /* Though I'd show how I came up with the code for the toggleModal function */
+    /*mdlresult.querySelector('h1').innerHTML = rslts;
+    mdlresult.style.display = mdlresult.style.display === "block" ? "none" : "block";
+    setTimeout(() => {
+        mdlresult.style.display = mdlresult.style.display === "block" ? "none" : "block";;
+    }, 1000);*/
+    toggleModal();
 }
 
 
- 
 
 /* Here's the DRY-er version of the dice roller to get a number */
 function theTumblingDice() {
    let dees = document.getElementById('dix');
    let num_dees = dees.options[dees.selectedIndex].value;
-   let roll_me = Math.floor(Math.random() * num_dees) + 1;
+   roll_me = Math.floor(Math.random() * num_dees) + 1;
    console.log(roll_me);
-   let keep_on_rolling = document.createElement("li");
+   keep_on_rolling = document.createElement("li");
    keep_on_rolling.textContent = roll_me;
    document.getElementById("listed").appendChild(keep_on_rolling);
+    toggleModal();
    }
 
 /*
@@ -77,8 +81,29 @@ function dice100() {
     let rollingD = tD.options[tD.selectedIndex].value;
     let roll = Math.floor(Math.random() * 10) + 1;
 }*/
-getDifficulty.toggleModal;
 
+
+function toggleModal() {
+    console.log(event.currentTarget.id)
+    if(event.currentTarget.id === 'classy') {
+        classyModal.querySelector('h1').innerHTML = rslts;
+        classyModal.style.display = classyModal.style.display === "block" ? "none" : "block";
+        setTimeout(() => {
+            classyModal.style.display = classyModal.style.display === "block" ? "none" : "block";;
+        }, 1000);
+        
+    }   
+    
+    if(event.currentTarget.id === 'rolling') {
+        numModal.querySelector('h1').innerHTML = roll_me;
+        numModal.style.display = numModal.style.display === "block" ? "none" : "block";
+        setTimeout(() => {
+        numModal.style.display = numModal.style.display === "block" ? "none" : "block";
+        }, 1000);
+}
+    
+   
+}
 
 
 

@@ -136,7 +136,7 @@ h1.contents-modal {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 990;
+  z-index: 970;
 }
 
 .modal .overlay {
@@ -145,19 +145,19 @@ h1.contents-modal {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 995;
-  background: rgba(0, 0, 0, 0.85);
+  z-index: 973;
+  background-color: rgba(124, 124, 124, 0.521);
 }
 
 .modal .modal_content {
-  z-index: 999;
+  z-index: 975;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-height: 90%;
   overflow: auto;
-  background: #fff;
+  background: linear-gradient(225deg, rgba(154, 8, 82, 0.85) 27%, rgba(187, 95, 10, 0.85) 67%);
   padding: 20px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
   text-align: center;
@@ -166,11 +166,18 @@ h1.contents-modal {
   /* This just a default width */
 }
 
-.modal .modal_content > h2 {
-  font-size: 28px;
+.modal .modal_content > h1 {
   font-weight: 200;
   margin: 20px 0 40px;
   text-align: center;
+}
+
+.modal .modal_content > h1 #botch {
+  font-size: 2rem;
+}
+
+.modal .modal_content > h1 #num {
+  font-size: 3rem;
 }
 
 /*# sourceMappingURL=output_styles.css.map */
