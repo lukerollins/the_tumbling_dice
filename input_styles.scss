@@ -3,6 +3,10 @@
     -webkit-transform: $property;
             transform: $property;
 }
+@mixin modal_transform($property) {
+    -webkit-transform: $property;
+            transform: $property;
+}
 
  *{
     box-sizing: border-box;
@@ -66,9 +70,9 @@ select:hover, select:focus {
     outline: solid 0.2rem colors_gradients_shadows.$selective_outline_color;
 }
 
-/*select#dix {
-    margin: 0 0.313rem;
-}*/
+select#dix {
+    margin: 0 0.59rem 0 0;
+}
 
 option {
     margin: 0;
@@ -103,9 +107,8 @@ button.rolly {
   
 button.rolly:hover, button.rolly:focus {
     background: colors_gradients_shadows.$you_gotta_roll_me;
-    background: colors_gradients_shadows.$button_hover_focus_gradient; 
+    background: colors_gradients_shadows.$button_hover_focus_gradient;
     box-shadow: colors_gradients_shadows.$button_shadow_hover_focus;
-    
     color: colors_gradients_shadows.$button_hover_focus_font_color;
   }
 
@@ -115,32 +118,7 @@ button.rolly:active {
     @include active_button_transform(translate(0em, 0.75em));
   }
 
-  /*.modal {
-      background-color: colors_gradients_shadows.$hazy_background;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      top: 0;
-      left: 0;
-      z-index: 3;
-     
-      position: absolute;
-
-  }*/
-
-  /*(.contents-modal {
-      background-color: whitesmoke;
-      text-align: center;
-  }
-
-  h1.contents-modal {
-      font-family: inherit;
-      font-size: 1.5rem;
-      color: black;
-  }*/
-
   .modal {
-    
     position: fixed;
     left: 0;
     top: 0;
@@ -161,34 +139,37 @@ button.rolly:active {
   }
 
   .modal .modal_content {
+    @include modal_transform(translate(-50%, -50%));
     z-index: 975;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     max-height: 90%;
     overflow: auto;
     background: colors_gradients_shadows.$tumbling_background_gradient;
-    padding: 20px;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.7);
+    padding: 1.25rem;
+    box-shadow: 0 1px 5px colors_gradients_shadows.$modal_content_shadow;
     text-align: center;
-    border-radius: 4px;
-    width: 520px; /* This just a default width */
+    border-radius: 4px; 
+    /*height: 25%;*/
   }
 
   .modal .modal_content > h1 {
     
     font-weight: 200;
-    margin: 20px 0 40px;
+    margin: 50% 50%;
     text-align: center;
   }
 
-  .modal .modal_content > h1 #botch {
-      font-size: 2rem;
+  #botch > h1  {
+      font-size: 3.5rem;
+      width: 40%;
   }
 
-  .modal .modal_content > h1 #num {
-      font-size: 3rem;
+   #num > h1  {
+      font-size: 5rem;
+      width: 33%;
+      border-radius: 100%
   }
 
 
