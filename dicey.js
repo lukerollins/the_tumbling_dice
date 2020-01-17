@@ -37,7 +37,7 @@ function getDifficulty() {
     } else if (result === "Botch!") {
         rslts = 'Botch!'
     } else {
-        rslts = 'failure!'
+        rslts = 'Failure!'
     };
     /* Though I'd show how I came up with the code for the toggleModal function */
     /*mdlresult.querySelector('h1').innerHTML = rslts;

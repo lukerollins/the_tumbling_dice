@@ -124,8 +124,7 @@ button.rolly:active {
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: 970;
-      
+    z-index: 970; 
   }
 
   .modal .overlay {
@@ -150,27 +149,83 @@ button.rolly:active {
     padding: 1.25rem;
     box-shadow: 0 1px 5px colors_gradients_shadows.$modal_content_shadow;
     text-align: center;
-    border-radius: 4px; 
+    border-radius: 12px;
     /*height: 25%;*/
   }
 
   .modal .modal_content > h1 {
-    
-    font-weight: 200;
     margin: 50% 50%;
     text-align: center;
   }
 
   #botch > h1  {
       font-size: 3.5rem;
-      width: 40%;
+      width: 35%;
   }
 
    #num > h1  {
       font-size: 5rem;
-      width: 33%;
-      border-radius: 100%
+      width: 20%;
+      border-radius: 25%;
   }
+
+  @media only screen and (max-width: 750px) {
+    #botch > h1  {
+        font-size: 2.75rem;
+    }
+  }
+
+  @media only screen and (max-width: 635px) {
+    #botch > h1  {
+        width: 50%;
+    }
+
+    #num > h1  {
+        width: 35%;
+    }
+  }
+
+  @media only screen and (max-width: 440px) {
+    #botch > h1  {
+        width: 75%;
+    }
+
+    #num > h1  {
+        width: 50%;
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+      body {
+        flex-direction: column;
+    }
+
+    select {
+        margin: 1rem;
+    }
+
+    select#dix {
+        margin: 1rem;
+    }
+
+    li::before {
+        width: 0.75rem;
+    }
+
+    li {
+        margin: 0 0 0 -0.5rem;
+    }
+
+    #botch > h1  {
+        width: 100%;
+    }
+
+    #num > h1  {
+        width: 80%;
+    }
+  }
+
+
 
 
 
