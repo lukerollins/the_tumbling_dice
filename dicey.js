@@ -63,8 +63,7 @@ function theTumblingDice() {
    }
 
 /*
-
-You know that lengthy comment I made in the HTML file? Well here's the corresponding JavaScript to go with it.
+Here's how I camed up with the code for the "numbered dice".
 
 function dice100() {
     let roll100 = Math.floor(Math.random() * 100) + 1;
@@ -82,7 +81,7 @@ function dice100() {
     let roll = Math.floor(Math.random() * 10) + 1;
 }*/
 
-
+/* Obviously, the code for the modals */
 function toggleModal() {
     console.log(event.currentTarget.id)
     if(event.currentTarget.id === 'classy') {

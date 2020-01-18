@@ -11,9 +11,10 @@
 </head>
 <body>
     
-    <!-- This is the part that was inspired by my desire to maybe attempt some writing and a random number generator that my buddy used in lieu of dice in my brief roleplaying career when I wore a teenagers clothes. Because of this I have some of the The World Of Darkness' Storyteller/Table-top books, so I figured I'd use some thing along the lines of their system to decide what should happen to my characters. That's I created a select input with 9 values 2-10. See, in the aforementioned system you'll roll a number of dice calculated by a system that's waay to lengthy to go into right now, and difficulty number based on how hard the task at hand would be for your character. Anything below that number is a 'failure' The reason there is no option 1: 1 means 'botch' which is a 'dramatic failure' (read, really bad). They also cancel out your successes, which I figured would be easier to count using an ordered list.   -->
+    <!-- Yes. Yes I did name this after a song by The Rolling Stones -->
 <div class="tumbling-dice">
         <h1>The Tumbling Dice</h1>
+    <!-- This is the whole roleplaying/writing tool part -->
         <select name="difficulty" id="difficulty">
             <option value="2">2</option>
             <option value="3">3</option>
@@ -25,12 +26,14 @@
             <option value="9">9</option>     
             <option value="10">10</option>
         </select>
+        
         <button id="classy" class="rolly">Roll Me</button>
+        <!-- Hopefully, an <ol> will make it easier to add up your successes -->
         <ol id="listy" class="listy2">
             <!--<li ></li>-->
         </ol>
         
-        <!-- I decided I'd save just this one part of the setup I started with. Essentially, it would be a button that, up being clicked would show the results of the roll in an ordered list. I figured an ordered list would make it easier to keep track of the results of my rolls.
+        <!-- Below is the inital code for the numbered dice portion of this dice roller
 
         <button id="d100">Roll D100</button>
         <ol id="d100list">
@@ -46,13 +49,14 @@
         <option value="20">D 20</option>
         <option value="100">D 100</option>
     </select>
-
+<!-- Again an <ol> to help you keep track of things -->
     <button id="rolling" class="rolly">Roll Me</button> 
     <ol id="listed" class="listy2">
         <!--<li ></li>-->
     </ol>  
 </div>
 
+<!-- Modals popping up for a touch of drama -->
 <div class="modal" id="botch" style="display: none;"> 
     <div class="overlay"></div>
     <h1 class="modal_content"></h1>

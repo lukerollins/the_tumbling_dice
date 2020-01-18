@@ -1,4 +1,5 @@
 @use 'colors_gradients_shadows';
+/* Mixins making my life easier */
 @mixin active_button_transform($property) {
     -webkit-transform: $property;
             transform: $property;
@@ -7,13 +8,6 @@
     -webkit-transform: $property;
             transform: $property;
 }
-
- *{
-    box-sizing: border-box;
-  }
-  *::before, *::after {
-    box-sizing: border-box;
-  }
 
 body {
     font-family: 'Baloo', cursive;
